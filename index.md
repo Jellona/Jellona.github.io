@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <meta charset="utf-8" />
+    <link href="coursesStyle.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <!-- The title on the page of the website -->
+    <div id ="page_title">
+        <h1>Course management website</h1>
+    </div id="page_title">
+    
+    <!-- The first container -->
+    <div id="content_one">
+        <!-- Available courses shown to user -->
+        <div id="course_container">
 
-You can use the [editor on GitHub](https://github.com/Jellona/Jellona.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+        </div id="course_container">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        <!-- Selected courses container -->
+        <div id="selected_courses">
+            <h2>Selected courses:</h2>
+        </div id="selected_courses">
+        
+    </div id="content_one">
+    
+    <!-- Adding new courses container -->
+    <div id="adding_courses">
+        <p>Add new course:</p>
+            Course Name:<input type="text" id="inputName" /> <br />
+            Credits:<input type="number" id="inputCredits" /> <br />
+            Timing:<input type="text" id="inputTiming" /> <br />
+            Language:<input type="text" id="inputLanguage" /> <br />
+            Type:<input type="text" id="inputType" /> <br />
+            <button onclick="addCourseToContainer();">Add course to website</button>
+    </div id="adding_courses">
+    
+    
+    <!-- Running JavaScript -->
+    <script src="courseJavaScript.js"></script>
+</body>
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jellona/Jellona.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</html>
