@@ -72,16 +72,9 @@ function showOnlyThisCourseWithBiggerImage(index) {
 
 //////////////////////////////////////////////////////////////////////////////
 // ------ Adding new courses
-/*
-inputCName
-inputCCredits
-inputCTiming
-inputCLanguage
-inputCType
 
-cName, cCredits, cTiming, cLanguage, cType
-*/
-function Player(cName, cCredits, cTiming, cLanguage, cType) {
+//Creating a course object
+function Course(cName, cCredits, cTiming, cLanguage, cType) {
     "use strict";
     this.cName = cName;
     this.cCredits = cCredits;
@@ -96,69 +89,67 @@ function Player(cName, cCredits, cTiming, cLanguage, cType) {
     }
 }
 
-var playerArray = [];
+var courseArray = [];
 
 
-function writePlayerArrayToWebStorage() {
+function writeCourseArrayToWebStorage() {
     // Serializing JavaScript objects into Json text/String
-    var JSONtext = JSON.stringify(playerArray);
+    var JSONtext = JSON.stringify(courseArray);
     
-    // Saving em as text to Web storage
-    // localStorage.setItem("playerArrayString", JSONtext);
-    sessionStorage.setItem("playerArrayString", JSONtext);
+    // Saving to Web storage
+    sessionStorage.setItem("courseArrayString", JSONtext);
 }
 
-function readPlayerArrayFromWebStorage() {
+function readCourseArrayFromWebStorage() {
     // Fetching JSOntext from Web storage
-    // var JSONtext = localStorage.getItem("playerArrayString");
-    var JSONtext = sessionStorage.getItem("playerArrayString");
+    var JSONtext = sessionStorage.getItem("courseArrayString");
     
     // Deserializing JavaScript objects from Json text/String
-    playerArray = JSON.parse(JSONtext);
+    courseArray = JSON.parse(JSONtext);
     
    
 }
 
-function displayPlayerListOnScreen() {
-    if (playerArray !== null && playerArray.length > 0) {
-    var parentElement = document.getElementById("playerList");
+function displayCourseListOnScreen() {
+    if (courseArray !== null && courseArray.length > 0) {
+    var parentElement = document.getElementById("courseList");
     parentElement.innerHTML = "";
     
     
-        for (a=0; a < playerArray.length; a++) {
+        for (a=0; a < courseArray.length; a++) {
             childElement = document.createElement("li");
-            childElement.innerHTML = playerArray[a].toString();
+            childElement.innerHTML = courseArray[a].toString();
             parentElement.appendChild(childElement);
         }
     }
     
 }
 
-function addPlayerToList() {
+function addCCourseToList() {
     "use strict";
-    // Reading input
+    // Reading index.html input
     var cName = document.getElementById("inputCName").value;
     var cCredits = document.getElementById("inputCCredits").value;
     var cTiming = document.getElementById("inputCTiming").value;
     var cLanguage = document.getElementById("inputCLanguage").value;
     var cType = document.getElementById("inputCType").value;
     
-    //Adding new plyaer to collection
-    var playerTemp = new Player(cName, cCredits, cTiming, cLanguage, cType);
-    playerArray.push(playerTemp);
+    //Adding new course to list
+    var courseTemp = new Course(cName, cCredits, cTiming, cLanguage, cType);
+    courseArray.push(courseTemp);
     
-    //Writing the array also the the web(browser) storage
-    writePlayerArrayToWebStorage();
+    //Saving to web storage
+    writeCourseArrayToWebStorage();
     
-    //Clearing input
+    //Making input fields empty
     document.getElementById("inputCName").value = "";
     document.getElementById("inputCCredits").value = "";
     document.getElementById("inputCTiming").value = "";
     document.getElementById("inputCLanguage").value = "";
     document.getElementById("inputCType").value = "";
     
-    //Displaying also the the web(browser) storage
-    displayPlayerListOnScreen();
+    // Display list on screen
+    displayCourseListOnScreen();
 }
 
 
