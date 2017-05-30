@@ -1,96 +1,145 @@
-/* ------- General -------- */
+
 body {
-    background-color: cadetblue;
-    /*border: solid;*/
+		background-image: url("./images/background_img1.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-left: 10%;
+		margin-right: 10%;
+		font-family: "Tahoma", Geneva, sans-serif;
+		color: #111111;
 }
 
 div {
-    border: solid;
-    margin: auto;
-    
+	background-color: rgba(230, 230, 255, 0.8);
+	padding: 10px;
 }
 
-/* --------- divs ------ */
-#content_one {
-    width:69%;
-    height: 550px;
-    position: relative;
-    text-align: center;
-    align-self: center;
-    border-color: red;
-    
-    
+button {
+	font-family: "Tahoma", Geneva, sans-serif;
+	padding: 5px;
 }
+
+input {
+	font-family: "Tahoma", Geneva, sans-serif;
+	padding: 5px;
+}
+
+footer {
+	background-color: rgba(230, 230, 255, 0.8);
+	padding: 10px;
+	text-align: center;	
+}
+
+li {
+    font-size: 14px;
+    margin-left: 10px;
+    list-style-type: circle;
+ }
+
+/*---------Header-------------*/
 
 #page_title {
-    text-align: center;
-    border-color: blue;
+	text-align: center;
+}
+
+#logo {
+	height: auto;
+	width: 40%;
+	border-radius: 0;
+}
+
+/*------------Popular courses------------*/
+
+img {
+	max-height: 20%;
+	max-width: 20%;
+	border-radius: 10%;
+}
+
+.courseInfoList {
+	display: inline;
+}
+
+.courseDivList {
+	display: inline;
+	background-color: rgba(230, 230, 255, 0);
+}
+
+.courseImageList {
+}
+
+.courseImageAlone {
+	max-width: 40%;
+	max-height: auto;
 }
 
 #course_container {
-    float: left; 
-	width: auto;
-    height: auto;
-    text-align: center;
-    left: 50%;
-    border-color: grey;
+	background-color: rgba(230, 230, 255, 0);
 }
 
+/*-------------Course list------------*/
 
-#selected_courses {
-    float: right;
-    width: 39%;
-    height: 500px;
-    text-align: center;
-    border-color: greenyellow;
-}
-
-#adding_courses {
-    float: left;
-    border-color: mediumpurple;
+#combined {
+	display: inline-flex;
+	width: 98%;
 }
 
 #course_list {
-    float: left;
-    height: auto;
-    width: 60%;
-    border-color: aqua;
+	float: left;
+	width: 50%;
+	background-color: rgba(230, 230, 255, 0);
 }
+
+#courseList {
+	list-style-type: none;
+}
+
+/*-------------Selected courses---------*/
+
+#selected_courses {
+	float: right;
+	width: 50%;
+	background-color: rgba(230, 230, 255, 0);
+}
+
+#selected_list {
+	list-style-type: none;
+}
+
+/*-----------Adding courses------------*/
+
+#course_goal_container {
+	display: inline-flex;
+	width: 98%;
+}
+
+#adding_courses {
+	float: left;
+	width: 50%;
+	background-color: rgba(230, 230, 255, 0);
+}
+
+/*-----------Study goals--------------*/
 
 #study_goal {
-    border-color: darkorange;
+	float: right;
+	width: 50%;
+	background-color: rgba(230, 230, 255, 0);
 }
 
-#navigator_div {
-    border-color: white;
+.unstyled {
+	list-style-type: none;
 }
 
-#mySidenav {
-    border-color: pink;
-}
-/* ----------The popular courses -------- */
-.courseImageList, .courseInfoList {
-    width : 150px;
-    height : 100px;
+.ng-scope {
+	background-color: rgba(230, 230, 255, 0);
 }
 
-.courseImageAlone, .courseInfoAlone {
-    width : 600px;
-    height : auto;
-}
+/*----------Coordinates----------------*/
 
 
-.courseDivList {
-    float : left;
-    height : 250;
-}
-
-.courseDivAlone {
-    margin : 0 auto;
-    height : 1000;
-}
-
-/* --------------Side Nav------------ */
+/* --------------Side Nav------------ #333333*/
 
 .sidenav {
     height: 100%;
@@ -99,10 +148,11 @@ div {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #111111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+	margin: 0;
 }
 
 .sidenav a {
