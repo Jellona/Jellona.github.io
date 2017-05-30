@@ -120,6 +120,15 @@ function displayCourseListOnScreen() {
             childElement = document.createElement("li");
             childElement.innerHTML = courseArray[a].toString();
             parentElement.appendChild(childElement);
+            
+            var button = document.createElement("button");
+            button.innerHTML = "Select course";
+            
+            childElement.appendChild(button);
+            
+            button.addEventListener("click", function(e) {
+                addCourseToListSelected(e.target.parentNode);
+            });
         }
     }
     
@@ -186,12 +195,17 @@ function closeNav() {
 //////////////////////////////////////////////////////////////////////////////
 // ------ Adding courses function
 
-function addCourseToListSelected(){
+function addCourseToListSelected(e){
     var ul = document.getElementById("selected_list");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode("Course"));
+    var span = document.createElement("span");
+    var inner = e.innerHTML.slice(0, e.innerHTML.indexOf("<"));
+    console.log(inner);
+    span.innerHTML = inner;
+    li.appendChild(span);
     ul.appendChild(li);
 }
+
 
 //////////////////////////////////////////////////////////////////////////////
 // ------- Angular function for the goals, removing them and adding new ones
